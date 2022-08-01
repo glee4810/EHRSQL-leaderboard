@@ -42,7 +42,7 @@
 								<div class="infoHeadline">
 									<h2>What is EHRSQL?</h2>
 								</div>
-								<p>A Practical Text-to-SQL Benchmark for Electronic Health Records(EHRSQL) is a new large-scale, high-quality text-to-SQL dataset for question answering (QA) on electronic health records where the questions are collected from 222 hospital staff, including physicians, nurses, and insurance review and health records teams at a university hospital. The dataset can be used to test three aspects of the QA models: generating queries that reflect the actual needs of different professionals in the hospital, understanding various types of time expressions (absolute, relative, or both), and the capability to abstain its prediction when not confident.</p>
+								<p>A Practical Text-to-SQL Benchmark for Electronic Health Records(EHRSQL) is a new large-scale, high-quality text-to-SQL dataset for question answering (QA) on electronic health records where the questions are collected from 222 hospital staff, including physicians, nurses, and insurance review and health records teams at a university hospital. The dataset can be used to test three aspects of the QA models: generating queries that reflect the actual needs of different professionals in the hospital, understanding various types of time expressions (absolute, relative, or both), and the capability to abstain when the model's prediction is not confident enough.</p>
                                 <a class="btn actionBtn" href="https://openreview.net/pdf?id=B2W8Vy0rarw">EHRSQL paper (Lee et al. '22)</a>
                                 <a class="btn actionBtn" href="https://github.com/glee4810/EHRSQL">Code	</a>
 								<div class="infoHeadline">
@@ -56,7 +56,8 @@
 									<li><a class="btn actionBtn inverseBtn" href="https://github.com/glee4810/EHRSQL/blob/main/dataset/ehrsql/tables.json" download>DB Schema (MIMIC-III / eICU)</a></li>									
 								</ul>
 								</p>
-								<p>To evaluate your models, we have also made available the evaluation script we will use for official evaluation, along with a sample prediction file that the script will take as input. To run the evaluation, use <code>python evaluate-v2.0.py &lt;path_to_dev-v2.0&gt; &lt;path_to_predictions&gt;</code>.
+								<p>To evaluate your models, we have also made available the evaluation script we will use for official evaluation, along with a sample prediction file that the script will take as input. To run the evaluation, use <code>python evaluate.py &lt;path_to_dev&gt; &lt;path_to_predictions&gt;</code>.
+								<p>The final model output should be either predicted SQL queries or "NULL" if abstained. EHRSQL uses Precision, Recall, and F1 scores for its evaluation metrics.</p>
 								<ul class="list-unstyled">
 									<li><a class="btn actionBtn inverseBtn" href="https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/" download>Evaluation Script</a></li>
 									<li><a class="btn actionBtn inverseBtn" href="https://worksheets.codalab.org/bundles/0x8731effab84f41b7b874a070e40f61e2/" download>Sample Prediction File (on Dev)</a></li>
@@ -64,7 +65,6 @@
 								</p>
 								<p>Once you have a built a model that works to your expectations on the dev set, you submit it to get official scores on the dev and a hidden test set. To preserve the integrity of test results, we do not release the test set to the public. Instead, we require you to submit your model so that we can run it on the test set for you. Here's a tutorial walking you through official evaluation of your model:</p>
 								<a class="btn actionBtn inverseBtn" href="https://worksheets.codalab.org/worksheets/0x6b7817532e5a4a71bf9013d69f250c0c">Submission Tutorial</a>
-                                <p> EHRSQL uses Precision, Recall, and F1 scores for its evaluation metrics. The final output should be either SQL queries or "NULL" if the predictions are abstained.</p>
 								<!-- <p>To keep up to date with major changes to the dataset, please subscribe:</p>
 								<div id="mc_embed_signup">
 									<form class="validate" id="mc-embedded-subscribe-form" action="//google.us13.list-manage.com/subscribe/post?u=1842e6560d6e10316b4e1aaf5&amp;id=76586bdcf4" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
