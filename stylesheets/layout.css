@@ -370,10 +370,10 @@ button:focus {
 }
 #topCover #appTitle {
   color: #fff;
-  font-size: 7.3em;
+  font-size: 6em;
   margin: 0px;
   padding: 0px;
-  font-weight: 100;
+  font-weight: 400;
   text-align: center;
 }
 #topCover #appTitle b {
